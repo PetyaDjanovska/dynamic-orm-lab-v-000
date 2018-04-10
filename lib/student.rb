@@ -4,9 +4,14 @@ require 'interactive_record.rb'
 
 class Student < InteractiveRecord
   attr_accessor :id, :name, :grade
+
   def initialize(options={})
   options.each do |property, value|
     self.send("#{property}=", value)
+  end
+
+  def table_name_for_insert
+
   end
 end
 
